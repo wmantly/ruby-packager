@@ -15,6 +15,7 @@ Create the following file:
 ```ruby
 package "foo" do
   version "0.0.1"
+  type "<fpm typ>"
   
   file {
     source "/some/place/in/filesystem"
@@ -41,6 +42,7 @@ invoked `packager`.
 * package <name>
    * name    String
    * version VersionString
+   * type String Valid FPM package type
    * file / files
       * source String
       * dest   String
