@@ -15,7 +15,7 @@ Create the following file:
 ```ruby
 package "foo" do
   version "0.0.1"
-  type "<fpm typ>"
+  type "<fpm type>"
   
   file {
     source "/some/place/in/filesystem"
