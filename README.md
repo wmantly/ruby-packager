@@ -51,7 +51,9 @@ invoked `packager`.
 
 ## Dry run
 
-The Package creating can be tested prior to creation with a dryrun. This will
+`packager execute dryrun <filename>`
+
+The Package creation can be tested prior to creation with a dryrun. This will
 only print the fpm command that the passed DSL will run. `dryrun` must be passed
 after `execute` and before the DSL file name.
 
