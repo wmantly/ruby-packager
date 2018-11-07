@@ -52,8 +52,11 @@ class Packager
     end
 
     def execute_command(cmd)
-      return if dryrun
-
+      if dryrun
+        puts 'Dry run! This has not run or changed anything'
+        puts "#{cmd.to_system.join(' ')}"
+      end
+      
       x = `#{cmd.to_system.join(' ')}`
       rv = eval(x)
       raise rv[:error] if rv[:error]

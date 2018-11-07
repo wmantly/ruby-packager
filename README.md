@@ -48,3 +48,29 @@ invoked `packager`.
       * dest   String
    * requires Array[String]
    * provides Array[String]
+
+## Dry run
+
+The Package creating can be tested prior to creation with a dryrun. This will
+only print the fpm command that the passed DSL will run. `dryrun` must be passed
+after `execute` and before the DSL file name.
+
+```bash
+09:19 PM william$ packager execute dryrun ../package.dsl 
+Dry run! This has not run or changed anything
+fpm --name my-test-package --version 0.0.1 --depends ["sshfs", "libpam-systemd"] -s empty -t deb
+```
+
+This is the passed DSL file
+
+```ruby
+package 'my-test-package' do
+  version '0.0.1'
+  type 'deb'
+  requires [
+    'sshfs',
+    'libpam-systemd',
+  ]
+
+end
+```

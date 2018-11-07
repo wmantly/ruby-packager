@@ -24,7 +24,13 @@ class Packager::CLI < Thor
       raise Thor::Error, "No filenames provided for execute"
     end
 
+    dryrun = nil
     args.each do |filename|
+      if filename == 'dryrun'
+        dryrun = true
+        next
+      end
+
       unless File.exists? filename
         raise Thor::Error, "'#{filename}' cannot be found"
       end
@@ -39,9 +45,9 @@ class Packager::CLI < Thor
         raise Thor::Error, "'#{filename}' produces nothing"
       end
 
-      packages = Packager::Executor.new.execute_on(items)
+      packages = Packager::Executor.new(dryrun: dryrun).execute_on(items)
 
-      puts "'#{filename}' executed #{packages.join(', ')}"
+      puts "'#{filename}' executed #{packages.join(', ')}" if not dryrun
     end
   end
 
