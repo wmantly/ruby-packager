@@ -22,9 +22,9 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 1.9.3'
 
-  s.add_dependency 'dsl_maker', '~> 0.1', '>= 0.1.1'
-  s.add_dependency 'fpm', '~> 1.4', '>= 1.1.0'
-  s.add_dependency 'thor', '~> 0.0', '>= 0.19.0'
+  s.add_dependency 'dsl_maker', '~> 0.1.1'
+  s.add_dependency 'fpm', '~> 1.4', '>= 1.10.2'
+  s.add_dependency 'thor', '~> 0.0', '>= 0.20.0'
 
   s.add_development_dependency 'rake', '~> 10'
   s.add_development_dependency 'rspec', '~> 3.0.0', '>= 3.0.0'
