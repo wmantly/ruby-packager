@@ -55,8 +55,9 @@ class Packager
       if dryrun
         puts 'Dry run! This has not run or changed anything'
         puts "#{cmd.to_system.join(' ')}"
+        return
       end
-      
+
       x = `#{cmd.to_system.join(' ')}`
       rv = eval(x)
       raise rv[:error] if rv[:error]
